@@ -1,0 +1,19 @@
+{
+  "name": "luckyshop-fe",
+  "version": "1.0.0",
+  "description": "LuckyShop后台",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luckyCbaby/LuckyShop-fe.git"
+  },
+  "author": "shijie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luckyCbaby/LuckyShop-fe/issues"
+  },
+  "homepage": "https://github.com/luckyCbaby/LuckyShop-fe#readme"
+}
