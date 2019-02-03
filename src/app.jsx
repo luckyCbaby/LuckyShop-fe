@@ -7,14 +7,34 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-import '../node_modules/font-awesome/css/font-awesome.min.css'
-import './index.css';
-import './index.scss';
+import {HashRouter,BrowserRouter,Route,Link,Switch,Redirect } from 'react-router-dom';
+//页面
+import Home from 'page/home/index.jsx';
+//通用组件
+import Layout from 'component/layout/index.jsx';
+
+class App extends React.Component{
+	constructor(props){
+		super(props)
+	}
+	render(){
+		return(
+			<BrowserRouter>
+				<Layout>
+					<Switch>
+						<Route exact path="/" component={Home} />
+						 {/* 如果匹配不到path 就把所有链接都跳转到/ */}
+						<Redirect from="*" to="/" />
+					</Switch>
+				</Layout>
+				
+			</BrowserRouter>
+		);
+	}
+}
 
 ReactDOM.render(
-	<div>
-		<i className="fa fa-address-book"></i>
-		<h1>hello shijie</h1>
-	</div>,
-	document.querySelector('#app')
-)
+	<App/>,
+	document.getElementById('app')
+);
+

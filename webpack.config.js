@@ -2,7 +2,7 @@
  * @Author: shijie
  * @Date:   2019-01-29 12:26:47
  * @Last Modified by:   shijie
- * @Last Modified time: 2019-01-29 17:00:07
+ * @Last Modified time: 2019-02-03 14:47:33
  */
 
 const path = require('path');
@@ -75,13 +75,25 @@ module.exports = {
 		contentBase: './dist',
 		port: 8020,
 		open: true, //执行webpack-dev-server自动打开浏览器
-
+		//访问一个页面找不到会返回一个指定页面
+		historyApiFallback: {
+			index: '/dist/index.html'
+		}
+	},
+	resolve: {
+		//处理别名,
+		alias: {
+			//将绝对路径下的src/page取别名叫page
+			page: path.resolve(__dirname, 'src/page'),
+			component: path.resolve(__dirname, 'src/component')
+		}
 	},
 	plugins: [
 		//提出html文件
 		new HtmlWebpackPlugin({
 			template: './src/index.html',
-			filename: 'index.html' //打包后的文件
+			filename: 'index.html', //打包后的文件
+			favicon: './favicon.ico' //处理favicon
 		}),
 		//独立css文件
 		new ExtractTextWebpackPlugin('css/[name].css'),
