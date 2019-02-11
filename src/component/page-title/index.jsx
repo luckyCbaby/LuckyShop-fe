@@ -7,7 +7,7 @@ class PageTitle extends React.Component{
 	}
 	//使用生命周期。在加载组件的时候把标题替换
 	componentWillMount(){
-		document.title=this.props.title + '-LuckyShop';
+		document.title=this.props.title + '-LuckyShop-fe';
 	}
 	render(){
 		return(
@@ -17,7 +17,6 @@ class PageTitle extends React.Component{
 						{this.props.children}
 					</div>
 				</div>
-			
 		)
 	}
 };

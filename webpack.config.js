@@ -78,6 +78,18 @@ module.exports = {
 		//访问一个页面找不到会返回一个指定页面
 		historyApiFallback: {
 			index: '/dist/index.html'
+		},
+		//服务器代理接口
+		proxy:{
+			//用户登录接口
+			'/manage' : {
+                target: 'http://admintest.happymmall.com',
+                changeOrigin : true
+            },
+            '/user/logout.do' : {
+            	target : 'http://admintest.happymmall.com',
+                changeOrigin : true
+            }
 		}
 	},
 	resolve: {
@@ -85,7 +97,9 @@ module.exports = {
 		alias: {
 			//将绝对路径下的src/page取别名叫page
 			page: path.resolve(__dirname, 'src/page'),
-			component: path.resolve(__dirname, 'src/component')
+			component: path.resolve(__dirname, 'src/component'),
+			util:path.resolve(__dirname,'src/util'),
+			service:path.resolve(__dirname,'src/service'),
 		}
 	},
 	plugins: [
