@@ -55,7 +55,7 @@ class User{
 			type:'post',
 			data:{
 				pageNum : pageNum, 
-			}
+			},
 		})
 	}
 };
