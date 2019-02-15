@@ -39,7 +39,7 @@ class TopNav extends React.Component{
                         <a className="dropdown-toggle" href="javascript:;">
                             <i className="fa fa-user fa-fw"></i>
                             {
-                                this.state.username ? <span>欢迎,{this.state.username}</span> : <span>欢迎您</span>
+                                this.state.username ? <span>你好,{this.state.username}</span> : <span>欢迎您</span>
                            		
                             }
                             <i className="fa fa-caret-down"></i>
