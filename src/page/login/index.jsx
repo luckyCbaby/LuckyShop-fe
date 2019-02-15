@@ -16,7 +16,12 @@ class Login extends React.Component{
 		}
 	}
 	componentWillMount(){
-		document.title='登录 - Luckyshop-fe'
+		document.title='登录 - Luckyshop-fe';
+		document.addEventListener('keyup',(e) => {
+			if(e.keyCode === 13) {
+				this.onSubmit();
+			}
+		})
 	}
 	//当用户名发生改变
 	onInputChange(e){

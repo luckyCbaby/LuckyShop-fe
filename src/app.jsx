@@ -21,9 +21,9 @@ import ErrorPage from 'page/error/index.jsx';
 //商品
 import ProductRouter from 'page/product/router.jsx';
 //订单页
-// import OrderList from 'page/order/index.jsx';
+import OrderList from 'page/order/index.jsx';
 //订单详情页
-// import OrderDetail from 'page/order/detail.jsx';
+import OrderDetail from 'page/order/detail.jsx';
 //用户列表页
 import UserList from 'page/user/index.jsx';
 
@@ -40,7 +40,10 @@ class App extends React.Component{
                     <Route path="/product" component={ProductRouter}/>
                     <Route path="/product-category" component={ProductRouter}/>
                     <Route path="/user/index" component={UserList}/>
+                    <Route path="/order/index" component={OrderList}/>
+                    <Route path="/order/detail/:orderNumber" component={OrderDetail}/>
                     <Redirect exact from="/user" to="/user/index"/>
+                    <Redirect exact from="/order" to="/order/index"/>
                     <Route component={ErrorPage}/>
                 </Switch>
             </Layout>

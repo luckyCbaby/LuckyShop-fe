@@ -43,7 +43,7 @@ class User{
 	//退出登录
 	logout(){
 		return _lucky.request({
-			url : 'user/logout.do',
+			url : '/user/logout.do',
 			type : 'post'
 		})
 	}
