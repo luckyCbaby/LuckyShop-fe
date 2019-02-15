@@ -41,6 +41,7 @@ class ProductSave extends React.Component{
 		_product.getProduct(this.state.id).then((res) => {
 			let images = res.subImages.split(',');
 			res.subImages = images.map((imgUri) => {
+
 				return {
 					uri : imgUri,
 					url : res.imageHost + imgUri
@@ -139,7 +140,7 @@ class ProductSave extends React.Component{
 	render(){
 		return(
 			<div id="page-wrapper">
-				<PageTitle title='商品管理 -- 添加商品' />
+				<PageTitle title={this.state.id ? '商品管理 -- 编辑商品' : '商品管理 -- 添加商品'} />
 				<div className="form-horizontal">
 					<div className="form-group">
 						<label htmlFor="" className="col-md-2 control-label">商品名称</label>

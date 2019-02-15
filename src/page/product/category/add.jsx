@@ -1,5 +1,5 @@
 import React        from 'react';
-import LuckyUtil        from 'util/lucky.jsx'
+import LuckyUtil    from 'util/lucky.jsx'
 import Product      from 'service/product-service.jsx'
 
 import PageTitle    from 'component/page-title/index.jsx';
@@ -27,7 +27,7 @@ class CategoryAdd extends React.Component{
                 categoryList : res
             });
         }, errMsg => {
-            _lucky.errorTips(errMsg);
+            _lucky.errTips(errMsg);
         });
     }
     // 表单的值发生变化
@@ -50,12 +50,12 @@ class CategoryAdd extends React.Component{
                 _lucky.successTips(res);
                 this.props.history.push('/product-category/index');
             }, (errMsg) => {
-                _lucky.errorTips(errMsg);
+                _lucky.errTips(errMsg);
             });
         }
         // 否则，提示错误
         else{
-            _lucky.errorTips('请输入品类名称');
+            _lucky.errTips('请输入品类名称');
         }
     }
     render(){
