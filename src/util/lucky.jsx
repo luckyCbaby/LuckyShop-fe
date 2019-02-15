@@ -25,7 +25,6 @@ class LuckyUtil{
 						_this.doLogin();
 					}
 					else{
-						debugger
 						typeof reject == 'function' ? reject(res.msg || res.data) : console.log(new Error('reject must be a function'));
 					}
 				},

@@ -51,7 +51,7 @@ class ListSearch extends React.Component{
 								onKeyUp={this.onSearchKeywordKeyUp.bind(this)}
 								onChange={this.onValueChange.bind(this)} />
 						</div>
-						<btton className="btn btn-primary" onClick={this.onSearch.bind(this)}>搜索</btton>
+						<button className="btn btn-primary" onClick={this.onSearch.bind(this)}>搜索</button>
 					</div>
 				</div>
 			</div>

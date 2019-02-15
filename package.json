@@ -38,8 +38,10 @@
   },
   "dependencies": {
     "path": "^0.12.7",
+    "prop-types": "^15.6.0",
     "rc-pagination": "^1.15.1",
     "react": "^16.2.0",
-    "react-dom": "^16.2.0"
+    "react-dom": "^16.2.0",
+    "simditor": "^2.3.6"
   }
 }

@@ -8,6 +8,7 @@ import ListSearch from './index-list-search.jsx';
 import TableList from 'util/table-list/index.jsx';
 import Pagination from 'util/pagination/index.jsx';
 
+import CategorySelector from './category-selector.jsx';
 
 
 const _lucky = new LuckyUtil();
@@ -130,8 +131,8 @@ class ProductList extends React.Component{
 									<td>¥{product.price}</td>
 									<td>
 										<p>{product.status === 1 ? '在售' : '已下架'}</p>
-										<btton className="btn btn-xs btn-warning"
-										onClick={(e) => {this.onSetProductStatus(e,product.id,product.status)}} >{product.status === 1 ? '下架' : '上架'}</btton>
+										<button className="btn btn-xs btn-warning"
+										onClick={(e) => {this.onSetProductStatus(e,product.id,product.status)}} >{product.status === 1 ? '下架' : '上架'}</button>
 									</td>
 								    <td>
 										<Link className="opear" to={`/product/detail/${product.id}`}>详情</Link>
