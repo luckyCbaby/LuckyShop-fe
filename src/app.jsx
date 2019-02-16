@@ -26,7 +26,6 @@ import OrderList from 'page/order/index.jsx';
 import OrderDetail from 'page/order/detail.jsx';
 //用户列表页
 import UserList from 'page/user/index.jsx';
-
 class App extends React.Component{
 	constructor(props){
 		super(props)
@@ -49,12 +48,12 @@ class App extends React.Component{
             </Layout>
         );
         return (
-            <BrowserRouter>
+            <HashRouter>
                 <Switch>
                     <Route path="/login" component={Login}/>
                     <Route path="/" render={ props => LayoutRouter}/>
                 </Switch>
-            </BrowserRouter>
+            </HashRouter>
         )
     }
 }

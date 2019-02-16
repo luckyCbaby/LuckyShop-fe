@@ -21,7 +21,7 @@ class TopNav extends React.Component{
         _user.logout().then((res) => {
             //退出登录成功删除本地存储，回到登录页面
             _lucky.removeStorage('userInfo');
-            window.location.href='/login';
+            window.location.href='/#/login';
         },(errMsg) => {
             _lucky.errorTips(errMsg);
         })

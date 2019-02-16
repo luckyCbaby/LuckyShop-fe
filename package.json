@@ -37,6 +37,7 @@
     "webpack-dev-server": "^2.11.3"
   },
   "dependencies": {
+    "history": "^4.7.2",
     "path": "^0.12.7",
     "prop-types": "^15.6.0",
     "rc-pagination": "^1.15.1",

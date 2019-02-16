@@ -40,7 +40,7 @@ class LuckyUtil{
 	//做登录,强制进入登录页面
 	doLogin(){
 		// 加入redirect参数表明是从哪跳过来的 encodeURIComponent() 方法处理特殊字符
-		window.location.href='/login?redirect=' + encodeURIComponent(window.location.pathname);
+		window.location.href='/#/login?redirect=' + encodeURIComponent(window.location.pathname);
 	}
 
 	//获取URL参数
