@@ -8,7 +8,7 @@ then
     exit
 fi
 
-if [ $1 = "mmall_admin_fe" ];
+if [ $1 = "LuckyShop-fe" ];
 then
     echo -e "---------Enter Project--------"
     cd $GIT_HOME$1
