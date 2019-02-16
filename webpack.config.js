@@ -9,10 +9,14 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
+let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
+console.log()
 module.exports = {
 	entry: './src/app.jsx',
 	output: {
 		path: path.resolve(__dirname, './dist'),
+		publicPath:WEBPACK_ENV === 'dev' 
+            ? '/dist/' : '//s.dongcewei.com/mmall_admin_fe/dist/',
 		filename: 'js/app.js'
 	},
 	module: {
@@ -114,7 +118,6 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			name: 'common', //name属性是手动指定的公共模块
 			filename: 'js/base.js' //公共模块打包到指定文件
-
 		})
 	]
 }
