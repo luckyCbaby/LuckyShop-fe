@@ -10,7 +10,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextWebpackPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 let WEBPACK_ENV = process.env.WEBPACK_ENV || 'dev';
-console.log()
 module.exports = {
 	entry: './src/app.jsx',
 	output: {
@@ -85,10 +84,10 @@ module.exports = {
 		//服务器代理接口
 		proxy:{
 			//用户登录接口
-			'/manage' : {
-                target: 'http://admintest.happymmall.com',
-                changeOrigin : true
-            },
+			// '/manage' : {
+   //              target: 'http://admintest.happymmall.com',
+   //              changeOrigin : true
+   //          },
             '/user/logout.do' : {
             	target : 'http://admintest.happymmall.com',
                 changeOrigin : true
