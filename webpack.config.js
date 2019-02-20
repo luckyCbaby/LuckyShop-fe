@@ -16,7 +16,7 @@ module.exports = {
 	output: {
 		path: path.resolve(__dirname, './dist'),
 		publicPath:WEBPACK_ENV === 'dev' 
-            ? '/dist/' : '//s.dongcewei.com/mmall_admin_fe/dist/',
+            ? '/dist/' : '//s.dongcewei.com/LuckyShop-fe/',
 		filename: 'js/app.js'
 	},
 	module: {
