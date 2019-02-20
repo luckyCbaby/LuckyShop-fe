@@ -4,38 +4,30 @@ import PageTitle from 'component/page-title/index.jsx';
 import {Link} from 'react-router-dom';
 import Statistic from 'service/statistic-service.jsx';
 import LuckyUtil from 'util/lucky.jsx';
-const Mock = require('mockjs');
+
 const _satatistic = new Statistic();
 const _lucky = new LuckyUtil();  
 
 
 
-Mock.mock('/manage/statistic/base_count.do?',{
-	status:0,
-	data:{
-		orderCount: 89,
-		productCount: 34,
-		userCount: 8
-	}
-});
 class Home extends React.Component{
 	constructor(props){
 		super(props);
 		this.state={
-			userCount : '-',
-			productCount : '-',
-			orderCount : '- '
+			userCount : 8,
+			productCount : 34,
+			orderCount : 89 
 		}
 	}
     componentDidMount(){
     	this.loadeCount();
     }
 	loadeCount(){
-		_satatistic.getHomeCount().then((res) => {
-			this.setState(res);
-		},(errMsg) => {
-			_lucky.errTips(errMsg)
-		})
+		// _satatistic.getHomeCount().then((res) => {
+		// 	this.setState(res);
+		// },(errMsg) => {
+		// 	_lucky.errTips(errMsg)
+		// })
 	}
 	render(){
 		return(

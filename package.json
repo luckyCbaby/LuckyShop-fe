@@ -38,7 +38,6 @@
   "dependencies": {
     "history": "^4.7.2",
     "path": "^0.12.7",
-    "mockjs": "^1.0.1-beta3",
     "prop-types": "^15.6.0",
     "rc-pagination": "^1.15.1",
     "react": "^16.2.0",
