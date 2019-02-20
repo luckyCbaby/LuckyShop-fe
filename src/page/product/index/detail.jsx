@@ -38,7 +38,7 @@ class ProductDetail extends React.Component{
 	                res.subImages = images.map((imgUri) => {
 	                    return {
 	                        uri: imgUri,
-	                        url: res.imageHost + imgUri
+	                        url: /^http/.test(imgUri) ? imgUri : res.imageHost + imgUri
 	                    }
 	                });
             	}
@@ -49,6 +49,7 @@ class ProductDetail extends React.Component{
         }
     }
     render(){
+        console.log(this.state)
         return (
             <div id="page-wrapper">
                 <PageTitle title="添加商品" />

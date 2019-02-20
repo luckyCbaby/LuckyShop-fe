@@ -38,25 +38,28 @@ class ProductSave extends React.Component{
 	//加载商品详情
 	loadProduct(){
 		//有id的时候，表示是编辑的功能，需要表单回填
-		_product.getProduct(this.state.id).then((res) => {
-			let images = res.subImages.split(',');
-			res.subImages = images.map((imgUri) => {
+		if (this.state.id) {
+			_product.getProduct(this.state.id).then((res) => {
+				let images = res.subImages.split(',');
+				res.subImages = images.map((imgUri) => {
 
-				return {
-					uri : imgUri,
-					url : res.imageHost + imgUri
-				}
-			});
-			res.defaultDetail = res.detail;
-			this.setState(res);
-		},(errMsg) => {
-			_lucky.errTips(errMsg);
-		})
+					return {
+						uri : imgUri,
+						url : /^http/.test(imgUri) ? imgUri : res.imageHost + imgUri
+					}
+				});
+				res.defaultDetail = res.detail;
+				this.setState(res);
+			},(errMsg) => {
+				_lucky.errTips(errMsg);
+			})
+		}
+		
 	}
 	//简单字段的改变， 比如商品名称， 描述，价格， 库存改变
 	onValueChange(e){
 		let name = e.target.name;
-		let value = e.target.value;
+		let value = parseInt(e.target.value);
 		this.setState({
 			[name] : value
 		})
@@ -118,7 +121,6 @@ class ProductSave extends React.Component{
 		}
 		//表单验证成功
 		if(productCheckResult.status){
-			debugger;
 			_product.saveProduct(product).then(
 				//保存成功,做成功提示然后跳转到产品页面
 				(res) => {
@@ -138,6 +140,7 @@ class ProductSave extends React.Component{
     }
 
 	render(){
+		console.log(this.state)
 		return(
 			<div id="page-wrapper">
 				<PageTitle title={this.state.id ? '商品管理 -- 编辑商品' : '商品管理 -- 添加商品'} />

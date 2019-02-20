@@ -70,7 +70,7 @@ class CategorySelector extends React.Component{
         if(this.props.readOnly){
             return;
         }
-        let newValue = e.target.value || 0;
+        let newValue = parseInt(e.target.value) || 0;
         this.setState({
             firstCategoryId     : newValue,
             secondCategoryId    : 0,
@@ -86,7 +86,7 @@ class CategorySelector extends React.Component{
         if(this.props.readOnly){
             return;
         }
-        let newValue = e.target.value || 0;
+        let newValue = parseInt(e.target.value) || 0;
         this.setState({
             secondCategoryId     : newValue
         }, () => {

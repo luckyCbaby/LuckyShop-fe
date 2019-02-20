@@ -46,7 +46,8 @@ class Product{
 		});
 	}
 	//保存商品
-	saveProduct(prodct){
+	saveProduct(product){
+
 		return _lucky.request({
 			url : '/manage/product/save.do',
 			type : 'post',
@@ -100,21 +101,21 @@ class Product{
 			}
 		}
 		//品类id不为number时，或者小于等于0时
-		if(typeof product.categoryId !== 'number' || !(product.categoryId) > 0){
+		if(typeof product.categoryId !== 'number' || product.categoryId < 0){
 			return {
 				status : false ,
 				msg :'请选择商品品类'
 			}
 		}
-		//商品价格不为数字时，后者小于0时
-		if(typeof product.price !== 'number' || !(product.price) >= 0){
+		//商品价格不为数字时，或者小于0
+		if(typeof product.price !== 'number' || product.price < 0){
 			return {
 				status : false,
 				msg : '请输入正确的商品价格'
 			}
 		}
 		//商品库存不为number时，或者小于0时
-		if(typeof product.stock !== 'number' || !(product.stock) >= 0){
+		if(typeof product.stock !== 'number' || product.stock < 0){
 			return {
 				status : false,
 				msg : '请输入正确的商品库存数量'
