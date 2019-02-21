@@ -69,7 +69,7 @@ class ProductSave extends React.Component{
 	//简单字段的改变， 比如商品名称， 描述，价格， 库存改变
 	onValueChange(e){
 		let name = e.target.name;
-		let value = parseInt(e.target.value);
+		let value = isNaN(parseInt(e.target.value)) ? e.target.value : parseInt(e.target.value);
 		this.setState({
 			[name] : value
 		})
