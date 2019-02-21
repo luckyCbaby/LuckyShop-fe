@@ -34,11 +34,11 @@ class ProductDetail extends React.Component{
         if(this.state.id){
             _product.getProduct(this.state.id).then((res) => {
             	if(res.subImages){
-					let images = res.subImages.split(',');
+					let images = this.removeDot(res.subImages.split(','));
 	                res.subImages = images.map((imgUri) => {
 	                    return {
 	                        uri: imgUri,
-                            url :  /^http/.test(imgUri) ? imgUri : res.imageHost + imgUri
+                            url: /^http/.test(imgUri) ? imgUri : res.imageHost + imgUri
 	                    }
 	                });
             	}
@@ -48,8 +48,18 @@ class ProductDetail extends React.Component{
             });
         }
     }
+
+    removeDot(arr) {
+        if (arr instanceof Array) {
+            for (let i = 0 ; i < arr.length ; i++) {
+                if (!arr[i]) {
+                    delete arr[i]
+                }
+            }
+        }
+        return arr;
+    }
     render(){
-        console.log(this.state)
         return (
             <div id="page-wrapper">
                 <PageTitle title="添加商品" />

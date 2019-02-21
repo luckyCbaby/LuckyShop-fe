@@ -84,10 +84,10 @@ module.exports = {
 		//服务器代理接口
 		proxy:{
 			//用户登录接口
-			// '/manage' : {
-   //              target: 'http://admintest.happymmall.com',
-   //              changeOrigin : true
-   //          },
+			'/manage' : {
+                target: 'http://admintest.happymmall.com',
+                changeOrigin : true
+            },
             '/user/logout.do' : {
             	target : 'http://admintest.happymmall.com',
                 changeOrigin : true
